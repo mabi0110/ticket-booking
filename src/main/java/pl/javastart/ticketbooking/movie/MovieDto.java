@@ -1,16 +1,6 @@
 package pl.javastart.ticketbooking.movie;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-
-@Entity
-public class Movie {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class MovieDto {
     private Long id;
     private String title;
     private String description;
@@ -47,5 +37,4 @@ public class Movie {
     public void setDurationMin(Integer durationMin) {
         this.durationMin = durationMin;
     }
-
 }
