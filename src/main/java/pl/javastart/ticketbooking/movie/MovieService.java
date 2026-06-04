@@ -24,8 +24,5 @@ public class MovieService {
             movieDtoList.add(movieMapper.map(movie));
         }
         return movieDtoList;
-
     }
-
-
 }

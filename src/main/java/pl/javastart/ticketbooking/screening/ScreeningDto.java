@@ -1,21 +1,14 @@
 package pl.javastart.ticketbooking.screening;
 
-import jakarta.persistence.*;
-import pl.javastart.ticketbooking.movie.Movie;
 
 import java.time.LocalDateTime;
 
-@Entity
-public class Screening {
+public class ScreeningDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private LocalDateTime screeningTime;
-
-    @ManyToOne(optional = false)
-    @JoinColumn(name="movie_id")
-    private Movie movie;
+    private Long movieId;
+    private String movieTitle;
 
     public Long getId() {
         return id;
@@ -33,11 +26,19 @@ public class Screening {
         this.screeningTime = screeningTime;
     }
 
-    public Movie getMovie() {
-        return movie;
+    public Long getMovieId() {
+        return movieId;
     }
 
-    public void setMovie(Movie movie) {
-        this.movie = movie;
+    public void setMovieId(Long movieId) {
+        this.movieId = movieId;
+    }
+
+    public String getMovieTitle() {
+        return movieTitle;
+    }
+
+    public void setMovieTitle(String movieTitle) {
+        this.movieTitle = movieTitle;
     }
 }
