@@ -30,5 +30,31 @@
                                  referencedTableName="movie"
                                  referencedColumnNames="id"/>
     </changeSet>
+    <changeSet id="0003" author="mabi">
+        <createTable tableName="room">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(100)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="0004" author="mabi">
+        <createTable tableName="seat">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="column" type="VARCHAR(10)"/>
+            <column name="row" type="INT"/>
+            <column name="is_available" type="BOOLEAN"/>
+            <column name="room_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="seat"
+                                 baseColumnNames="room_id"
+                                 constraintName="fk_seat_room_id"
+                                 referencedTableName="room"
+                                 referencedColumnNames="id"/>
+    </changeSet>
     <include file="../testdata/testdata.sql" relativeToChangelogFile="true"/>
 </databaseChangeLog>
