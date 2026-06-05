@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ScreeningService {
@@ -35,5 +36,9 @@ public class ScreeningService {
             }
         }
         return screeningDtoList;
+    }
+
+    public Optional<ScreeningDto> getScreeningById(Long id) {
+        return screeningRepository.findById(id).map(screeningMapper::map);
     }
 }

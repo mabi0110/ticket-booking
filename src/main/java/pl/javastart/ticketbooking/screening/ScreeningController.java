@@ -1,10 +1,8 @@
 package pl.javastart.ticketbooking.screening;
 
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -27,5 +25,12 @@ public class ScreeningController {
         } else {
             return screeningService.getAllScreeningsAfterScreeningTime(screeningTime);
         }
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ScreeningDto> getScreeningById(@PathVariable Long id) {
+        return screeningService.getScreeningById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 }
