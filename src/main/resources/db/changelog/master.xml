@@ -45,7 +45,6 @@
             </column>
             <column name="column" type="VARCHAR(10)"/>
             <column name="row" type="INT"/>
-            <column name="is_available" type="BOOLEAN"/>
             <column name="room_id" type="BIGINT">
                 <constraints nullable="false"/>
             </column>

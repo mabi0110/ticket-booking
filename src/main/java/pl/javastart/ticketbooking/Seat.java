@@ -13,8 +13,6 @@ public class Seat {
 
     private Integer row;
 
-    private Boolean isAvailable;
-
     @ManyToOne(optional = false)
     @JoinColumn(name = "room_id")
     private Room room;
@@ -41,14 +39,6 @@ public class Seat {
 
     public void setRow(Integer row) {
         this.row = row;
-    }
-
-    public Boolean getAvailable() {
-        return isAvailable;
-    }
-
-    public void setAvailable(Boolean available) {
-        isAvailable = available;
     }
 
     public Room getRoom() {
