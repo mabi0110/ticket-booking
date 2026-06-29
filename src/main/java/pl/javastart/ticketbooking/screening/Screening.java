@@ -1,9 +1,12 @@
 package pl.javastart.ticketbooking.screening;
 
 import jakarta.persistence.*;
+import pl.javastart.ticketbooking.Room;
+import pl.javastart.ticketbooking.Seat;
 import pl.javastart.ticketbooking.movie.Movie;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 public class Screening {
@@ -16,6 +19,10 @@ public class Screening {
     @ManyToOne(optional = false)
     @JoinColumn(name="movie_id")
     private Movie movie;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name="room_id")
+    private Room room;
 
     public Long getId() {
         return id;
@@ -40,4 +47,13 @@ public class Screening {
     public void setMovie(Movie movie) {
         this.movie = movie;
     }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+
 }

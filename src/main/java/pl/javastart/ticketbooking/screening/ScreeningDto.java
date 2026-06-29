@@ -9,6 +9,8 @@ public class ScreeningDto {
     private LocalDateTime screeningTime;
     private Long movieId;
     private String movieTitle;
+    private Long roomId;
+    private String roomName;
 
     public Long getId() {
         return id;
@@ -40,5 +42,21 @@ public class ScreeningDto {
 
     public void setMovieTitle(String movieTitle) {
         this.movieTitle = movieTitle;
+    }
+
+    public Long getRoomId() {
+        return roomId;
+    }
+
+    public void setRoomId(Long roomId) {
+        this.roomId = roomId;
+    }
+
+    public String getRoomName() {
+        return roomName;
+    }
+
+    public void setRoomName(String roomName) {
+        this.roomName = roomName;
     }
 }

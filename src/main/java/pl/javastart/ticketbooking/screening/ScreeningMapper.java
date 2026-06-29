@@ -11,6 +11,8 @@ public class ScreeningMapper {
         screeningDto.setScreeningTime(screening.getScreeningTime());
         screeningDto.setMovieId(screening.getMovie().getId());
         screeningDto.setMovieTitle(screening.getMovie().getTitle());
+        screeningDto.setRoomId(screening.getRoom().getId());
+        screeningDto.setRoomName(screening.getRoom().getName());
         return screeningDto;
     }
 
