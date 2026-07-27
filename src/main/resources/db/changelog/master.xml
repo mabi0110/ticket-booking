@@ -63,5 +63,25 @@
                                  referencedTableName="room"
                                  referencedColumnNames="id"/>
     </changeSet>
+    <changeSet id="0005" author="mabi">
+        <createTable tableName="booked_seat">
+            <column name="seat_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="screening_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="booked_seat"
+                                 baseColumnNames="seat_id"
+                                 constraintName="fk_booked_seat_seat_id"
+                                 referencedTableName="seat"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="booked_seat"
+                                 baseColumnNames="screening_id"
+                                 constraintName="fk_booked_seat_screening_id"
+                                 referencedTableName="screening"
+                                 referencedColumnNames="id"/>
+    </changeSet>
     <include file="../testdata/testdata.sql" relativeToChangelogFile="true"/>
 </databaseChangeLog>
