@@ -1,6 +1,7 @@
-package pl.javastart.ticketbooking;
+package pl.javastart.ticketbooking.seat;
 
 import jakarta.persistence.*;
+import pl.javastart.ticketbooking.room.Room;
 
 @Entity
 public class Seat {
@@ -9,9 +10,9 @@ public class Seat {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String column;
+    private String columnNumber;
 
-    private Integer row;
+    private Integer rowNumber;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "room_id")
@@ -25,20 +26,20 @@ public class Seat {
         this.id = id;
     }
 
-    public String getColumn() {
-        return column;
+    public String getColumnNumber() {
+        return columnNumber;
     }
 
-    public void setColumn(String column) {
-        this.column = column;
+    public void setColumnNumber(String columnNumber) {
+        this.columnNumber = columnNumber;
     }
 
-    public Integer getRow() {
-        return row;
+    public Integer getRowNumber() {
+        return rowNumber;
     }
 
-    public void setRow(Integer row) {
-        this.row = row;
+    public void setRowNumber(Integer rowNumber) {
+        this.rowNumber = rowNumber;
     }
 
     public Room getRoom() {
