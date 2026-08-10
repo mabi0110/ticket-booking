@@ -11,10 +11,12 @@ import java.util.Optional;
 public class ScreeningService {
     private final ScreeningRepository screeningRepository;
     private final ScreeningMapper screeningMapper;
+    private final ScreeningDetailsMapper screeningDetailsMapper;
 
-    public ScreeningService(ScreeningRepository screeningRepository, ScreeningMapper screeningMapper) {
+    public ScreeningService(ScreeningRepository screeningRepository, ScreeningMapper screeningMapper, ScreeningDetailsMapper screeningDetailsMapper) {
         this.screeningRepository = screeningRepository;
         this.screeningMapper = screeningMapper;
+        this.screeningDetailsMapper = screeningDetailsMapper;
     }
 
     public List<ScreeningDto> getAllScreenings() {
@@ -38,7 +40,7 @@ public class ScreeningService {
         return screeningDtoList;
     }
 
-    public Optional<ScreeningDto> getScreeningById(Long id) {
-        return screeningRepository.findById(id).map(screeningMapper::map);
+    public Optional<ScreeningDetailsDto> getScreeningById(Long id) {
+        return screeningRepository.findById(id).map(screeningDetailsMapper::map);
     }
 }

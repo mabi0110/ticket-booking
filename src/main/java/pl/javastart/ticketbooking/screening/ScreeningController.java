@@ -28,7 +28,7 @@ public class ScreeningController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ScreeningDto> getScreeningById(@PathVariable Long id) {
+    public ResponseEntity<ScreeningDetailsDto> getScreeningById(@PathVariable Long id) {
         return screeningService.getScreeningById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
