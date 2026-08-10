@@ -1,12 +1,10 @@
 package pl.javastart.ticketbooking.screening;
 
 import jakarta.persistence.*;
-import pl.javastart.ticketbooking.Room;
-import pl.javastart.ticketbooking.Seat;
+import pl.javastart.ticketbooking.room.Room;
 import pl.javastart.ticketbooking.movie.Movie;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 public class Screening {

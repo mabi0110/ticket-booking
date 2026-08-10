@@ -1,7 +1,8 @@
-package pl.javastart.ticketbooking;
+package pl.javastart.ticketbooking.room;
 
 import jakarta.persistence.*;
 import pl.javastart.ticketbooking.screening.Screening;
+import pl.javastart.ticketbooking.seat.Seat;
 
 import java.util.List;
 
